@@ -10,4 +10,4 @@ Google Maps API
 
 :tada:
 
-Surf Up!
+Surf's Up!
