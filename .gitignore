@@ -19,7 +19,7 @@ coverage
 # node-waf configuration
 .lock-wscript
 
-# env key
+# env ignore
 .env
 
 # Compiled binary addons (http://nodejs.org/api/addons.html)
