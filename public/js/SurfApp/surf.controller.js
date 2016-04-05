@@ -1,3 +1,5 @@
+(function() {
+  "use strict";
 
 angular
   .module('SurfApp')
@@ -5,47 +7,52 @@ angular
 
 SurfController.$inject = ['$http'];
 
-
 function SurfController($http) {
+  var vm = this;
 
-  var surf = this;
+  //Binding
+    vm.all = [];
+    vm.selected = {};
+    vm.show = show;
+    vm.fetch = fetch;
+    vm.select = select;
+    vm.isSelected = isSelected;
 
-  surf.all = [];
 
-  surf.selected = {};
-
-  surf.fetch = function(){
+  //Helpers
+  function fetch(vm) {
     $http
-      .get('/api/surf')
-      .then(function(response){
-        surf.all = response.data;
+      .get('/api/spot/all')
+      .then(function(response) {
+        vm.all = response.data;
       })
   };
 
-  surf.show = function(surf){
-    surf.selected = surf;
+  function show(vm) {
+    vm.selected = vm;
   };
 
-  surf.select = function(surf){
-    surf.selected = surf;
-  }
+  function select(vm) {
+    vm.selected = vm;
+  };
 
-  surf.isSelected = function(){
-    return surf.selected != undefined;
-  }
+  function isSelected() {
+    return vm.selected != undefined;
+  };
 
   var map;
 
-  surf.initMap = function() {
-    map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: surf.selected.latitude , lng: surf.selected.longitude},
-    zoom: 8
-    });
-  };
+  vm.initMap = function() {
+    map = new google.maps
+            .Map(document.getElementById('map'), {
+              center: {lat: vm.selected.latitude , lng: vm.selected.longitude},
+              zoom: 8
+        });
+    };
 
-  surf.getWeather = function(){
-    $.ajax({
-    url: 'http://api.wunderground.com/api/' + process.env.DB_PASS + '/geolookup/conditions/q/' + surf.selected.zip + '.json',
+  vm.getWeather = function() {
+    $http({
+    url: 'http://api.wunderground.com/api/' + process.env.DB_PASS + '/geolookup/conditions/q/' + vm.selected.zip + '.json',
     dataType: "jsonp",
     succes: function(parsed_json) {
       var temp_f = parsed_json['current_observation']['temp_f'];
@@ -66,9 +73,9 @@ function SurfController($http) {
     });
   };
 
-  surf.getForecast = function(){
-    $.ajax({
-    url : 'http://api.wunderground.com/api/' + process.env.DB_PASS + '/geolookup/forecast/q/' + surf.selected.zip + '.json',
+  vm.getForecast = function() {
+    $http({
+    url : 'http://api.wunderground.com/api/' + process.env.DB_PASS + '/geolookup/forecast/q/' + vm.selected.zip + '.json',
     dataType : "jsonp",
     success : function(parsed_json) {
       var today = parsed_json.forecast.simpleforecast.forecastday[0];
@@ -86,9 +93,9 @@ function SurfController($http) {
     });
   };
 
-  surf.switchToC = function(){
-    $.ajax({
-    url : 'http://api.wunderground.com/api/' + process.env.DB_PASS + '/geolookup/conditions/q/' + surf.selected.zip + '.json',
+  vm.switchToC = function() {
+    $http({
+    url : 'http://api.wunderground.com/api/' + process.env.DB_PASS + '/geolookup/conditions/q/' + vm.selected.zip + '.json',
     dataType : "jsonp",
     success : function(parsed_json) {
       var temp_c = parsed_json['current_observation']['temp_c'];
@@ -99,9 +106,9 @@ function SurfController($http) {
     });
   };
 
-  surf.switchToC2 = function(){
-    $.ajax({
-    url : 'http://api.wunderground.com/api/' + process.env.DB_PASS + '/geolookup/forecast/q/' + surf.selected.zip + '.json',
+  vm.switchToC2 = function() {
+    $http({
+    url : 'http://api.wunderground.com/api/' + process.env.DB_PASS + '/geolookup/forecast/q/' + vm.selected.zip + '.json',
     dataType : "jsonp",
     success : function(parsed_json) {
       var today = parsed_json.forecast.simpleforecast.forecastday[0];
@@ -112,9 +119,9 @@ function SurfController($http) {
     });
   };
 
-   surf.switchToF = function(){
-    $.ajax({
-    url : 'http://api.wunderground.com/api/' + process.env.DB_PASS + '/geolookup/conditions/q/' + surf.selected.zip + '.json',
+   vm.switchToF = function() {
+    $http({
+    url : 'http://api.wunderground.com/api/' + process.env.DB_PASS + '/geolookup/conditions/q/' + vm.selected.zip + '.json',
     dataType : "jsonp",
     success : function(parsed_json) {
       var temp_f = parsed_json['current_observation']['temp_f'];
@@ -125,9 +132,9 @@ function SurfController($http) {
     });
   };
 
-  surf.switchToF2 = function(){
-    $.ajax({
-    url : 'http://api.wunderground.com/api/' + process.env.DB_PASS + '/geolookup/forecast/q/' + surf.selected.zip + '.json',
+  vm.switchToF2 = function() {
+    $http({
+    url : 'http://api.wunderground.com/api/' + process.env.DB_PASS + '/geolookup/forecast/q/' + vm.selected.zip + '.json',
     dataType : "jsonp",
     success : function(parsed_json) {
       var today = parsed_json.forecast.simpleforecast.forecastday[0];
@@ -138,11 +145,11 @@ function SurfController($http) {
     });
   };
 
-  surf.fetch();
+  vm.fetch();
 
 };
 
-
+})
 
 
 
