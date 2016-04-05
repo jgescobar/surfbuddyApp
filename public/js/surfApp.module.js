@@ -1,7 +1,7 @@
 (function() {
   "use strict";
 
-angular
-  .module("surfApp", ["ui.router"]);
+  angular
+    .module("surfApp", ["ui.router"]);
 
 })();
