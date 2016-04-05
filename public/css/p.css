@@ -1,0 +1,281 @@
+body {
+  background-color: cadetblue;
+  font-family: 'open sans', sans-serif;
+  font-weight: 400;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+.grid {
+  width: 73%;
+  margin: 0 auto;
+  display: block;
+  background-color: white;
+}
+.insta-container {
+  width: 100%;
+  text-align: center;
+  margin-right: 10px;
+}
+
+#instagram-hashtag {
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#instagram-div {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+
+.instalogo {
+  width: 150px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.slide {
+ width: 100%;
+ height: 480px;
+ max-height: 480px;
+ margin: 0 auto;
+}
+
+#map {
+  width: 100%;
+  height: 350px;
+  display: block;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.map{
+  text-align: center;
+  margin: 0 auto;
+}
+
+#logo {
+  font-family:'Righteous', cursive;
+  color: black;
+}
+
+.dropdown-menu {
+  padding: 10px;
+  color: black;
+}
+
+#dropdown-btn{
+  cursor: pointer;
+}
+
+.dropdown-choice:hover {
+  color: #879254;
+  cursor: pointer;
+}
+
+.surf-headline {
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+
+.surfbuddy-logo {
+  margin-bottom: 30px;
+}
+
+.surf-details {
+  background-color: #879254;
+  color: white;
+  padding: 5px;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+.surf-details2 {
+  background-color: #333333;
+  color: white;
+  padding: 5px;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+.pop-swells {
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid black;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.overlay {
+  opacity: 1;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 15px;
+  font-weight: 300;
+}
+
+.header {
+  margin-left: 5px;
+}
+
+#hello-modal {
+  background-image: url('http://worldofanimals.net/wp-content/uploads/2015/12/Yellowstone-Bull-Elk-Snow-1.jpg');
+  background-size: fill;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-dialog {
+  background-color: white;
+  width: 400px;
+  border-radius: 10px;
+  margin-top: 100px;
+}
+
+.modal-header, .modal-content {
+  text-align: center;
+}
+
+.modal-title {
+  margin-right: 10px;
+}
+
+.surf-in-modal {
+  list-style-type: none;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.surf-in-modal:hover {
+  color: #879254;
+  cursor: pointer;
+}
+
+.panel {
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  text-align: left;
+}
+
+.comment {
+  text-align: left;
+  margin-bottom: 15px;
+  margin-top: 30px;
+}
+
+.title h1 {
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 60px;
+  color: black;
+  text-align: center;
+  height: 60px;
+}
+
+.break {
+  height: 170px;
+  padding: 10px;
+  text-align: center;
+}
+
+.weather-container{
+  background-color: #0099cc;;
+  color: white;
+  padding: 5px;
+  border-radius: 10px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 16px;
+}
+
+h3.current {
+  font-size: 16px;
+}
+
+h5.comment {
+  text-align: center;
+}
+
+#switch-to-f, #switch-to-c {
+  background-color: #ccf2ff;
+  border: none;
+  box-shadow: 1px 1px 1px black;
+  border-radius: 5px;
+  color: black;
+  margin-top: 10px;
+  width: 40px;
+  height: 30px;
+}
+
+#icon-background {
+  margin: 0 auto;
+  background-color: white;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.icon {
+  margin-top: 20px;
+  width: 60px;
+  height: auto;
+}
+
+a.forecast-link {
+  font-size: 16px;
+  color: black;
+  margin-bottom: 10px;
+}
+
+#surf-image {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+#surf-modal {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+#surf-modal-img {
+  width: 100%;
+  height: auto;
+}
+
+.surf-modal-size {
+  background-color: white;
+  border-radius: 10px;
+  width: 700px;
+}
+
+#carousel-example-generic {
+  background-image: none;
+}
+
+.carousel-control.right, .carousel-control.left {
+  background-image: none;
+}
+
+iframe {
+  width: 100%;
+  max-width: 100%;
+}
+
+
