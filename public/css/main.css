@@ -9,12 +9,14 @@ body {
   font-size: 14px;
   padding: 50px;
   margin-top: 100px;
+  text-align: right;
 }
 
 #logo {
   font-family:'Righteous', cursive;
   color: black;
   font-size: 100px;
+  text-align: center;
 
 }
 
@@ -31,6 +33,11 @@ a { color: #00B7FF; }
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
     background-color: black;
+    text-align: center;
+}
+
+.iconfooter {
+  text-align: center;
 }
 
 

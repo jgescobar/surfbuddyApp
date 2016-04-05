@@ -11,12 +11,6 @@ $(document).ready(function(){
   });
 
 
-  var showModal = function(){
-    $('#hello-modal').modal('show');
-  };
-  showModal();
-
-
   $("#beach-map-image").on("click", function() {
     $('#surf-modal-img').attr('src', $('#beach-map-image').attr('src'));
     $('#surf-modal').modal('show');
