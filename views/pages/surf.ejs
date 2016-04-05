@@ -4,33 +4,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
   <title>SurfBuddy</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
-  <script src="bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
-  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/SurfApp/surf.controller.js"></script>
-  <script src="js/SurfApp/surf.js"></script>
-  <script src="js/cycle.js"></script>
+ <!--  // <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+  // <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
+  // <script src="js/main.js"></script>
+  // <script src="js/SurfApp/surf.controller.js"></script>
+  // <script src="js/SurfApp/surf.js"></script>
+  // <script src="js/cycle.js"></script> -->
   <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" media="only screen and (max-device-width: 600px)" href="/css/mobile-device.css" />
-  <link rel="stylesheet" href="/css/style.css">
+  <!-- <link rel="stylesheet" href="/css/main.css"> -->
+  <link rel="stylesheet" href="/css/swell.css">
   <link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300italic,300,400italic,600,800' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
 </head>
 <body>
   <div class="grid" ng-controller="SurfController as surf">
-    <div class="modal fade active" id="hello-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" data-keyboard="false">
+    <div class="modal fade active" id="hello-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog">
         <div class="modal-content">
-          <h1 id="logo">SurfBuddy<span class="glyphicon glyphicon-tree-conifer glyphicon-align-left" aria-hidden="true" style="color:#86b300"></span></h1>
-          <div class="modal-header">
-            <h4 class="modal-title"><strong>Explore:</strong></h4>
+         <div class="modal-header">
           </div> <!-- modal header -->
           <div class="modal-body">
-            <li class="surf-in-modal" ng-repeat="surf in surf.all track by $index" ng-click="surf.show(surf); surf.initMap(); surf.getWeather(); surf.getForecast(); surf.showInsta()" data-dismiss="modal">{{surf.name}}</li>
+            <li class="surf-in-modal" ng-repeat="surf in surf.all track by $index" ng-click="surf.show(surf); surf.initMap(); surf.getWeather(); surf.getForecast()" data-dismiss="modal">{{surf.name}}</li>
           </div> <!-- modal body -->
         </div> <!-- modal content -->
       </div> <!-- modal dialogue -->
@@ -38,10 +34,11 @@
     <div class="row header">
       <div class="col-md-12 surfbuddy-logo">
         <h1 id="logo">SurfBuddy</h1>
-        <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjY0cHgiIGhlaWdodD0iNjRweCIgdmlld0JveD0iMCAwIDM1LjY2IDM1LjY2IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAzNS42NiAzNS42NjsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8Zz4KCTxwYXRoIGQ9Ik0zMy4yMTQsMTQuNjc3bDAuMTUxLDAuMTc2YzAuMTU5LDAuMTc2LDAuNDIsMC4yMTQsMC42MjQsMC4wOTRjMC4yMDMtMC4xMiwwLjI5NS0wLjM2NywwLjIxOS0wLjU5MiAgIGMtMC42MTMtMS44MDctMS41ODYtMy40MTMtMi44ODgtNC43NzVjLTIuNDY0LTIuNTc3LTUuNzg0LTMuOTk2LTkuMzUyLTMuOTk2Yy0xLjQ1OCwwLTIuODg3LDAuMjQxLTQuMjM5LDAuNzA4ICAgYzIuMjQ1LTEuNjUxLDQuOTUyLTIuNTQ2LDcuNzgtMi41NDZjMS4yODcsMCwyLjU2NCwwLjE4NywzLjc5NywwLjU1NWMwLjIzMSwwLjA2OSwwLjQ4Mi0wLjAzOCwwLjU5MS0wLjI1NyAgIGMwLjEwNy0wLjIxOCwwLjA0My0wLjQ4Mi0wLjE1Mi0wLjYyNkMyNi42ODEsMS4xODMsMjMuMDQ2LDAsMTkuMjM2LDBjLTQuNjA0LDAtOC45NzMsMS43NTMtMTIuMzAyLDQuOTM2ICAgQzMuNDkxLDguMjI3LDEuNTM3LDEyLjY2MywxLjQzLDE3LjQyNWMtMC4xMDcsNC43NjMsMS42NDcsOS4yODEsNC45MzksMTIuNzI2YzMuMzk2LDMuNTUzLDcuOTc0LDUuNTEsMTIuODkxLDUuNTEgICBjNC42MTEsMCw4Ljk4OC0xLjc1NiwxMi4zMjMtNC45NDNjMC4xMTEtMC4xMDQsMC4yMTQtMC4yMTksMC4zMTUtMC4zMjhsMC4xNDctMC4xNThjMC4xNzYtMC4xODQsMC4xODctMC40NjcsMC4wMjUtMC42NjQgICBjLTAuMTYxLTAuMTk0LTAuNDQyLTAuMjM5LTAuNjU1LTAuMTA0Yy0xLjA3NCwwLjY4Ni0yLjI3MiwxLjEyOS0zLjUyMSwxLjM0NmM0LjA2NC0yLjAxNiw2LjgtNC43NzQsNi4xMDgtNi4xNzQgICBjLTAuNjExLTEuMjQtMy43MDItMC45OTYtNy4yMjksMC40NjdsMC4yNTYtMS40NTdjMC4wNDQtMC4yNS0wLjA2MS0wLjUwNC0wLjI2OC0wLjY0OWwtMi4yMDItMS41NjNsMy44MzMtMC44NzkgICBjMC4zNTQtMC4wOCwwLjU3NS0wLjQzNSwwLjQ5NC0wLjc4N2MtMC4wODEtMC4zNTQtMC40MzYtMC41NzgtMC43ODktMC40OTRsLTUuMjY2LDEuMjA1Yy0wLjAyMSwwLjAwNi0wLjAzMywwLjAyMS0wLjA1MywwLjAyNiAgIGMtMC4wNjcsMC4wMjEtMC4xMzEsMC4wNTItMC4xODgsMC4wOTdjLTAuMDEzLDAuMDEtMC4wMjgsMC4wMS0wLjA0LDAuMDJjLTMuMjA5LDIuNzUyLTMuMzE5LDMuMDc4LTMuMzc3LDMuMjU0ICAgYy0wLjExNSwwLjM0NiwwLjA3MSwwLjcxNywwLjQxNywwLjgzMmMwLjA2OCwwLjAyMSwwLjEzOSwwLjAzNSwwLjIwOCwwLjAzNWMwLjI0MywwLDAuNDczLTAuMTM5LDAuNTg2LTAuMzU5ICAgYzAuMjE3LTAuMjgxLDEuNDUzLTEuNDAyLDIuNjM1LTIuNDI2bDEuNzY0LDEuMjVsLTIuNjk4LDIuNTk2Yy0wLjE0NCwwLjEzOS0wLjIxNiwwLjMzMi0wLjE5OSwwLjUyOWwwLjExOSwxLjQ0MSAgIGMtMC41NzQsMC40MzItMS4wOCwwLjg2My0xLjUwMSwxLjI4NWMtMC40MjgtMC4zMi0wLjgzOC0wLjY3LTEuMjE1LTEuMDYzYy0zLjY2OS0zLjgzOC0zLjUzMi05Ljk0OCwwLjMwNi0xMy42MTkgICBjMS44MDEtMS43MjEsNC4xNjQtMi42NjksNi42NTMtMi42NjlDMjguOTA2LDExLjcwMSwzMS4zNzgsMTIuNzU3LDMzLjIxNCwxNC42Nzd6IE0yNS41ODcsMjQuMjU2bC0wLjI2MywxLjUgICBjLTAuNzM3LDAuMzY1LTEuNDMsMC43NTYtMi4wNjUsMS4xNTZsLTAuMDMyLTAuMzg3TDI1LjU4NywyNC4yNTZ6IE0yMS40NDcsMTYuNTA3YzAuOTY5LDAsMS43NTUsMC43ODUsMS43NTUsMS43NTUgICBjMCwwLjk2OS0wLjc4NiwxLjc1Ni0xLjc1NSwxLjc1NmMtMC45NywwLTEuNzU1LTAuNzg3LTEuNzU1LTEuNzU2QzE5LjY5MSwxNy4yOTIsMjAuNDc3LDE2LjUwNywyMS40NDcsMTYuNTA3eiIgZmlsbD0iIzg2MzJjNyIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" />
+        <a href="/"><img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjY0cHgiIGhlaWdodD0iNjRweCIgdmlld0JveD0iMCAwIDM1LjY2IDM1LjY2IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAzNS42NiAzNS42NjsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8Zz4KCTxwYXRoIGQ9Ik0zMy4yMTQsMTQuNjc3bDAuMTUxLDAuMTc2YzAuMTU5LDAuMTc2LDAuNDIsMC4yMTQsMC42MjQsMC4wOTRjMC4yMDMtMC4xMiwwLjI5NS0wLjM2NywwLjIxOS0wLjU5MiAgIGMtMC42MTMtMS44MDctMS41ODYtMy40MTMtMi44ODgtNC43NzVjLTIuNDY0LTIuNTc3LTUuNzg0LTMuOTk2LTkuMzUyLTMuOTk2Yy0xLjQ1OCwwLTIuODg3LDAuMjQxLTQuMjM5LDAuNzA4ICAgYzIuMjQ1LTEuNjUxLDQuOTUyLTIuNTQ2LDcuNzgtMi41NDZjMS4yODcsMCwyLjU2NCwwLjE4NywzLjc5NywwLjU1NWMwLjIzMSwwLjA2OSwwLjQ4Mi0wLjAzOCwwLjU5MS0wLjI1NyAgIGMwLjEwNy0wLjIxOCwwLjA0My0wLjQ4Mi0wLjE1Mi0wLjYyNkMyNi42ODEsMS4xODMsMjMuMDQ2LDAsMTkuMjM2LDBjLTQuNjA0LDAtOC45NzMsMS43NTMtMTIuMzAyLDQuOTM2ICAgQzMuNDkxLDguMjI3LDEuNTM3LDEyLjY2MywxLjQzLDE3LjQyNWMtMC4xMDcsNC43NjMsMS42NDcsOS4yODEsNC45MzksMTIuNzI2YzMuMzk2LDMuNTUzLDcuOTc0LDUuNTEsMTIuODkxLDUuNTEgICBjNC42MTEsMCw4Ljk4OC0xLjc1NiwxMi4zMjMtNC45NDNjMC4xMTEtMC4xMDQsMC4yMTQtMC4yMTksMC4zMTUtMC4zMjhsMC4xNDctMC4xNThjMC4xNzYtMC4xODQsMC4xODctMC40NjcsMC4wMjUtMC42NjQgICBjLTAuMTYxLTAuMTk0LTAuNDQyLTAuMjM5LTAuNjU1LTAuMTA0Yy0xLjA3NCwwLjY4Ni0yLjI3MiwxLjEyOS0zLjUyMSwxLjM0NmM0LjA2NC0yLjAxNiw2LjgtNC43NzQsNi4xMDgtNi4xNzQgICBjLTAuNjExLTEuMjQtMy43MDItMC45OTYtNy4yMjksMC40NjdsMC4yNTYtMS40NTdjMC4wNDQtMC4yNS0wLjA2MS0wLjUwNC0wLjI2OC0wLjY0OWwtMi4yMDItMS41NjNsMy44MzMtMC44NzkgICBjMC4zNTQtMC4wOCwwLjU3NS0wLjQzNSwwLjQ5NC0wLjc4N2MtMC4wODEtMC4zNTQtMC40MzYtMC41NzgtMC43ODktMC40OTRsLTUuMjY2LDEuMjA1Yy0wLjAyMSwwLjAwNi0wLjAzMywwLjAyMS0wLjA1MywwLjAyNiAgIGMtMC4wNjcsMC4wMjEtMC4xMzEsMC4wNTItMC4xODgsMC4wOTdjLTAuMDEzLDAuMDEtMC4wMjgsMC4wMS0wLjA0LDAuMDJjLTMuMjA5LDIuNzUyLTMuMzE5LDMuMDc4LTMuMzc3LDMuMjU0ICAgYy0wLjExNSwwLjM0NiwwLjA3MSwwLjcxNywwLjQxNywwLjgzMmMwLjA2OCwwLjAyMSwwLjEzOSwwLjAzNSwwLjIwOCwwLjAzNWMwLjI0MywwLDAuNDczLTAuMTM5LDAuNTg2LTAuMzU5ICAgYzAuMjE3LTAuMjgxLDEuNDUzLTEuNDAyLDIuNjM1LTIuNDI2bDEuNzY0LDEuMjVsLTIuNjk4LDIuNTk2Yy0wLjE0NCwwLjEzOS0wLjIxNiwwLjMzMi0wLjE5OSwwLjUyOWwwLjExOSwxLjQ0MSAgIGMtMC41NzQsMC40MzItMS4wOCwwLjg2My0xLjUwMSwxLjI4NWMtMC40MjgtMC4zMi0wLjgzOC0wLjY3LTEuMjE1LTEuMDYzYy0zLjY2OS0zLjgzOC0zLjUzMi05Ljk0OCwwLjMwNi0xMy42MTkgICBjMS44MDEtMS43MjEsNC4xNjQtMi42NjksNi42NTMtMi42NjlDMjguOTA2LDExLjcwMSwzMS4zNzgsMTIuNzU3LDMzLjIxNCwxNC42Nzd6IE0yNS41ODcsMjQuMjU2bC0wLjI2MywxLjUgICBjLTAuNzM3LDAuMzY1LTEuNDMsMC43NTYtMi4wNjUsMS4xNTZsLTAuMDMyLTAuMzg3TDI1LjU4NywyNC4yNTZ6IE0yMS40NDcsMTYuNTA3YzAuOTY5LDAsMS43NTUsMC43ODUsMS43NTUsMS43NTUgICBjMCwwLjk2OS0wLjc4NiwxLjc1Ni0xLjc1NSwxLjc1NmMtMC45NywwLTEuNzU1LTAuNzg3LTEuNzU1LTEuNzU2QzE5LjY5MSwxNy4yOTIsMjAuNDc3LDE2LjUwNywyMS40NDcsMTYuNTA3eiIgZmlsbD0iIzg2MzJjNyIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" />
+        </a>
         <p class="tagline"><em>Let's check out some swells bra</em></p>
         <div class="dropdown menu">
-          <button id="dropdown-btn" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" id="dropdownMenu1" aria-haspopup="true" aria-expanded="true">Choose a Surf Spot
+          <button id="dropdown-btn" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" id="dropdownMenu1" aria-haspopup="true" aria-expanded="true">Shred Info
           <span class="caret"></span></button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
             <li class="dropdown-choice" ng-repeat="surf in surf.all track by $index" ng-click="surf.show(surf); surf.initMap(); surf.getWeather(); surf.getForecast(); surf.showInsta()">{{surf.name}}</li>
@@ -101,10 +98,10 @@
               <br>
               <div class="surf-details2">
                 <div class="overlay">
-                  <h3 style="font-family: 'Fjalla One', sans-serif" class="comment">Popular Swells According to Level</h3>
-                  <p><strong><span style="color: #96a25d">Noob Status: </span></strong>{{surf.selected.spot[0].name}}, {{surf.selected.difficulty[0].min}}</p>
-                  <p><strong><span style="color: #80bfff">All Right: </span></strong>{{surf.selected.spot[1].name}}, {{surf.selected.difficulty[1].min}}</p>
-                  <p><strong><span style="color: #cc0000">Righteous Bra: </span></strong>{{surf.selected.spot[2].name}}, {{surf.selected.difficulty[2].min}}</p>
+                  <h3 style="font-family: 'Fjalla One', sans-serif" class="comment">Surf Report</h3>
+                  <p><strong><span style="color: #96a25d">Swell: </span></strong>{{surf.selected.spot[0].name}}, {{surf.selected.difficulty[0].min}}</p>
+                  <p><strong><span style="color: #80bfff">Wind: </span></strong>{{surf.selected.spot[1].name}}, {{surf.selected.difficulty[1].min}}</p>
+                  <p><strong><span style="color: #cc0000">Tide: </span></strong>{{surf.selected.spot[2].name}}, {{surf.selected.difficulty[2].min}}</p>
                 </div>
               </div>
               <br>
@@ -130,13 +127,6 @@
               </div> <!-- weather container -->
             </div> <!-- col-md-2 -->
             <br>
-            <div class="col-md-4 insta-shift">
-              <div class="insta-container">
-                <div id="instagram-hashtag"></div>
-                <div id="instagram-div"></div>
-              </div>
-            </div>
-          </div> <!-- row -->
           <div class="row">
             <div class="col-md-6 surf-pics">
               <div class="modal fade" id="surf-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -154,6 +144,7 @@
             <div class="col-md-6">
               <h3 style="font-family: 'Fjalla One', sans-serif">Google Map</h3>
               <div id="map"></div>
+              <br>
             </div>
             </div> <!-- col-md-5 -->
           </div> <!--  row -->
@@ -164,5 +155,9 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDabLO9WhXWJ5fRl9LiNFoo4uE5fLQe51I"
     async defer></script>
   <script async defer src="//platform.instagram.com/en_US/embeds.js"></script>'
+  <%- include('../partials/footer') %>
+
 </body>
+
 </html>
+

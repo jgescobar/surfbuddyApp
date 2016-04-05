@@ -10,6 +10,13 @@ body {
   padding: 50px;
 }
 
+#logo {
+  font-family:'Righteous', cursive;
+  color: black;
+  font-size: 100px;
+
+}
+
 a { color: #00B7FF; }
 
 .surfvideo {

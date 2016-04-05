@@ -1,3 +1,4 @@
+
 angular
   .module('SurfApp')
   .controller('SurfController', SurfController);
@@ -137,42 +138,7 @@ function SurfController($http) {
     });
   };
 
-  surf.showInsta = function(){
-    var $instaDiv = $('#instagram-div');
-    var $instaHashtag = $('#instagram-hashtag');
-
-    if(surf.selected.name === 'Rincon, CA'){
-      $instaHashtag.html('<img class="instalogo" src="http://cdn.scahw.com.au/cdn-1cfbb585c92bb70/imagevaultfiles/id_304949/cf_3/instagram-text-logo.png"><br><br><strong>#rincon</strong>');
-      $instaDiv.html('<iframe src="http://widget.websta.me/in/tag:yosemite/?r=1&w=2&h=3&b=1&p=5" allowtransparency="true" frameborder="0" scrolling="no" style="border:none;overflow:hidden;width:270px; height: 405px" ></iframe> <!-- websta - websta.me -->');
-    } else if (surf.selected.name === 'Malibu, CA'){
-        $instaHashtag.html('<img class="instalogo" src="http://cdn.scahw.com.au/cdn-1cfbb585c92bb70/imagevaultfiles/id_304949/cf_3/instagram-text-logo.png"><br><br><strong>#malibu</strong>');
-        $instaDiv.html('<iframe src="http://widget.websta.me/in/tag:brycecanyon/?r=1&w=2&h=3&b=1&p=5" allowtransparency="true" frameborder="0" scrolling="no" style="border:none;overflow:hidden;width:270px; height: 405px" ></iframe> <!-- websta - websta.me -->');
-    } else if (surf.selected.name === 'Venice, CA'){
-        $instaHashtag.html('<img class="instalogo" src="http://cdn.scahw.com.au/cdn-1cfbb585c92bb70/imagevaultfiles/id_304949/cf_3/instagram-text-logo.png"><br><br><strong>#venice</strong>');
-        $instaDiv.html('<iframe src="http://widget.websta.me/in/tag:deathvalley/?r=1&w=2&h=3&b=1&p=5" allowtransparency="true" frameborder="0" scrolling="no" style="border:none;overflow:hidden;width:270px; height: 405px" ></iframe> <!-- websta - websta.me -->');
-    } else if (surf.selected.name === 'El Porto, CA'){
-        $instaHashtag.html('<img class="instalogo" src="http://cdn.scahw.com.au/cdn-1cfbb585c92bb70/imagevaultfiles/id_304949/cf_3/instagram-text-logo.png"><br><br><strong>#elporto</strong>');
-        $instaDiv.html('<iframe src="http://widget.websta.me/in/tag:joshuatree/?r=1&w=2&h=3&b=1&p=5" allowtransparency="true" frameborder="0" scrolling="no" style="border:none;overflow:hidden;width:270px; height: 405px" ></iframe> <!-- websta - websta.me -->');
-    } else if (surf.selected.name === 'Palos Verde, CA'){
-        $instaHashtag.html('<img class="instalogo" src="http://cdn.scahw.com.au/cdn-1cfbb585c92bb70/imagevaultfiles/id_304949/cf_3/instagram-text-logo.png"><br><br><strong>#palosVerde</strong>');
-        $instaDiv.html('<iframe src="http://widget.websta.me/in/tag:redwoodNP/?r=1&w=2&h=3&b=1&p=5" allowtransparency="true" frameborder="0" scrolling="no" style="border:none;overflow:hidden;width:270px; height: 405px" ></iframe> <!-- websta - websta.me -->');
-    } else if (surf.selected.name === 'North Shore, HI'){
-        $instaHashtag.html('<img class="instalogo" src="http://cdn.scahw.com.au/cdn-1cfbb585c92bb70/imagevaultfiles/id_304949/cf_3/instagram-text-logo.png"><br><br><strong>#northShore</strong>');
-        $instaDiv.html('<iframe src="http://widget.websta.me/in/tag:sequoiaandkingscanyon/?r=1&w=2&h=3&b=1&p=5" allowtransparency="true" frameborder="0" scrolling="no" style="border:none;overflow:hidden;width:270px; height: 405px" ></iframe> <!-- websta - websta.me -->');
-    } else if (surf.selected.name === 'Waikiki, HI'){
-        $instaHashtag.html('<img class="instalogo" src="http://cdn.scahw.com.au/cdn-1cfbb585c92bb70/imagevaultfiles/id_304949/cf_3/instagram-text-logo.png"><br><br><strong>#waikiki</strong>');
-        $instaDiv.html('<iframe src="http://widget.websta.me/in/tag:archesNP/?r=1&w=2&h=3&b=1&p=5" allowtransparency="true" frameborder="0" scrolling="no" style="border:none;overflow:hidden;width:270px; height: 405px" ></iframe> <!-- websta - websta.me -->');
-    } else if (surf.selected.name === 'lower Trestles, CA'){
-        $instaHashtag.html('<img class="instalogo" src="https://www.paperflies.com/blog/wp-content/uploads/2015/04/trestles.png"><br><br><strong>#lowertrestles</strong>');
-        $instaDiv.html('<iframe src="http://widget.websta.me/in/tag:canyonlands/?r=1&w=2&h=3&b=1&p=5" allowtransparency="true" frameborder="0" scrolling="no" style="border:none;overflow:hidden;width:270px; height: 405px" ></iframe> <!-- websta - websta.me -->');
-    } else {
-      $instaHashtag.html("<p>No posts to display!</p>")
-    }
-  };
-
-
   surf.fetch();
-
 
 };
 

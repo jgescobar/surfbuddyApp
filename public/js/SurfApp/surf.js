@@ -18,8 +18,8 @@ $(document).ready(function(){
 
 
   $("#beach-map-image").on("click", function() {
-    $('#trails-modal-img').attr('src', $('#beach-map-image').attr('src'));
-    $('#trails-modal').modal('show');
+    $('#surf-modal-img').attr('src', $('#beach-map-image').attr('src'));
+    $('#surf-modal').modal('show');
   });
 
 });
