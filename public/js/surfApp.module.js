@@ -2,6 +2,6 @@
   "use strict";
 
 angular
-  .module("SurfApp", ["ui.router"]);
+  .module("surfApp", ["ui.router"]);
 
 })();
