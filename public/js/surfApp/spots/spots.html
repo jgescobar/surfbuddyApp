@@ -14,21 +14,39 @@
       <p class="tagline"><em>Let's check out some swells bra</em></p>
     </div> <!-- .surfbuddy-logo -->
 
-    <div class="dropdown menu" "col-md-4" style="margin-right: 150px;">
-      <button id="dropdown-btn" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Pick a County
-      <span class="caret"></span></button>
+    <!-- <div class="dropdown menu" "col-md-4" style="margin-right: 150px;">
+      <button id="dropdown-btn" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Pick a County
+        <span class="caret"></span>
+      </button>
       <ul class="dropdown-menu" aria-labelledby="dropdown-btn">
-        <li class="dropdown-choice">{{'vm.county.name'}}</li>
+        <li class="dropdown-choice">Santa Barbara</li>
+        <li class="dropdown-choice">Ventura</li>
+        <li class="dropdown-choice">Los Angeles</li>
       </ul>
-    </div> <!-- .dropdown -->
+    </div> --> <!-- .dropdown -->
 
-     <div class="dropdown menu" "col-md-4" style="margin-right: 150px;">
-      <button id="dropdown-btn" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Pick a surf spot
-      <span class="caret"></span></button>
+    <select class="btn btn-default">
+      <option value="" selected="selected" disabled>Pick a County<span class="caret"></span></option>
+      <option value="sant-barbara">Santa Barbara</option>
+      <option value="ventura">Ventura</option>
+      <option value="los-angeles">Los Angeles</option>
+    </select>
+
+<!--      <div class="dropdown menu" "col-md-4" style="margin-right: 150px;">
+      <button id="dropdown-btn" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Pick a surf spot
+        <span class="caret"></span>
+      </button>
       <ul class="dropdown-menu" aria-labelledby="dropdown-btn">
         <li class="dropdown-choice">{{'vm.county.name'}}</li>
       </ul>
-    </div> <!-- .dropdown -->
+    </div>  --><!-- .dropdown -->
+
+<!--     <select class="btn btn-default">
+      <option value="" selected="selected" disabled>Pick a Spot<span class="caret"></span></option>
+      <option ng-repeat="spot in vm.spots" value="{{ spot.id }}">{{ spot.name }}</option>
+    </select> -->
 
   </header>
 
