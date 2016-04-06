@@ -10,7 +10,7 @@
   color: black;
   font-size: 100px;
   text-align: center;
-
+  border: none;
 }
 
 .splash a { color: #00B7FF; }
