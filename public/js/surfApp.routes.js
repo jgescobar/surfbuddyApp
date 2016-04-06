@@ -24,7 +24,7 @@
         templateUrl: '/js/surfApp/spots/spots.detail.html'
       });
 
-    // $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/');
   }
 
 })();
