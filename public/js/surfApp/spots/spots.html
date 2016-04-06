@@ -1,0 +1,64 @@
+<div class="container-fluid grid">
+
+  <!-- HOME PAGE & SPOT PAGE: HEADER -->
+  <header class="row header">
+
+    <div class="col-md-12 surfbuddy-logo">
+      <div class="lilsurfer">
+        <a ui-sref="splash">
+          <img alt="" src="/images/curl-small.svg">
+          <img alt="" src="/images/curl-medium.svg">
+        </a>
+        <h1 id="logo">Cali*Bunga</h1>
+      </div> <!-- .lilsurfer -->
+      <p class="tagline"><em>Let's check out some swells bra</em></p>
+    </div> <!-- .surfbuddy-logo -->
+
+    <div class="dropdown menu">
+      <button id="dropdown-btn" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Shred Info
+      <span class="caret"></span></button>
+      <ul class="dropdown-menu" aria-labelledby="dropdown-btn">
+        <li class="dropdown-choice">{{'vm.name'}}</li>
+      </ul>
+    </div> <!-- .dropdown -->
+
+  </header>
+
+  <!-- HOME PAGE & SPOT PAGE: CAROUSEL -->
+  <div class="row">
+    <div class="col-md-12">
+      <div class="carousel"><h4>Carousel Goes Here…</h4></div>
+    </div> <!-- col-md-12 -->
+  </div> <!-- row -->
+
+  <div ui-view></div>
+
+  <div class="iconfooter">
+    <footer>
+      <hr>
+      <span>Made with Internship Labor on a very cold desk.</span>
+      <br>
+      <span> © 2016, Cali*Bunga </span> &nbsp; &nbsp;
+    </footer>
+    <div>
+      Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from
+      <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>
+      is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+    </div>
+  </div>
+
+</div><!-- container fluid -->
+
+<!-- Surf Map Modal -->
+
+<!--
+<div class="modal fade" id="surf-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog surf-modal-size">
+    <div class="modal-content surf-modal-size">
+      <div class="modal-body surf-modal-size">
+        <img id="surf-modal-img" data-dismiss="modal" alt="" src="vm.selected.surf_map_url">
+      </div>
+    </div>
+  </div>
+</div>
+-->

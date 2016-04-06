@@ -1,0 +1,82 @@
+<!-- SPOT PAGE: SPOT INFO -->
+
+<!-- Spot Details -->
+<div class="row">
+  <div class="break col-md-12">
+    <div class="title"><h1 class="surf-title">{{'vm.selected.name'}}</h1></div>
+      <div class="">
+        <h3 style="font-family: 'Fjalla One', sans-serif;"><span style="color: #fec400">County:</span> {{'vm.selected.County'}}</h3>
+      </div>
+  </div>
+</div> <!-- .row -->
+
+<!-- Spot and Weather -->
+<div class="row">
+  <!-- Spot Bio & Surf Report -->
+  <div class="col-md-6 shift">
+
+    <div class="surf-details">
+      <div class="overlay">
+        <h3 style="font-family: 'Fjalla One', sans-serif;">{{'vm.selected.headline'}}</h3>
+        <p>{{'vm.selected.bio'}}</p>
+      </div>
+    </div> <!-- surf-details -->
+    <br>
+
+    <div class="surf-details2">
+      <div class="overlay">
+        <h3 style="font-family: 'Fjalla One', sans-serif" class="comment">Surf Report</h3>
+        <p><strong><span style="color: #96a25d">Swell: </span></strong>{{'vm.selected.spot[0].name'}}</p>
+        <p><strong><span style="color: #80bfff">Wind: </span></strong>{{'vm.selected.spot[1].name'}}</p>
+        <p><strong><span style="color: #cc0000">Tide: </span></strong>{{'vm.selected.spot[2].name'}}</p>
+      </div>
+    </div>
+    <br>
+
+  </div> <!-- .col-md-4.shift -->
+
+  <!-- Weather Conditions -->
+  <div class="col-md-6">
+    <div class="weather-container">
+      <div class="overlay">
+        <button id="switch-to-f">&#176; F</button>
+        <button id="switch-to-c">&#176; C</button>
+        <div id="date"></div>
+        <div id="weather-condition"></div>
+        <div id="icon-background">
+          <div id="weather-icon"></div>
+        </div>
+        <div>
+          <p style="font-size: 45px" class="actual-temp"></p>
+          <p style="font-size: 16px" class="feels-like"></p>
+          <p style="font-size: 16px" id="high"></p>
+          <p style="font-size: 16px" class="wind"></p>
+          <p id="10forecast"></p>
+        </div>
+      </div> <!--  overlay -->
+    </div> <!-- weather container -->
+  </div> <!-- col-md-4 -->
+</div>
+<br>
+
+<!-- Pics & Maps -->
+<div class="row">
+  <!-- Pics -->
+  <div class="col-md-6 surf-pics">
+    <h3 style="font-family: 'Fjalla One', sans-serif">
+      Swell Pics &nbsp;&nbsp;
+      <span style="font-size: 16px; color: #879254; font-weight: 300">
+        <em>Click picutre to zoom &nbsp;</em>
+        <span class="glyphicon glyphicon-zoom-in" aria-hidden="true" style="color: #879254"></span>
+      </span>
+    </h3>
+    <img id="surf-image" alt="" src="">
+  </div>
+
+  <!-- Google Map -->
+  <div class="col-md-6">
+    <h3 style="font-family: 'Fjalla One', sans-serif">Google Map</h3>
+    <div id="map"></div>
+    <br>
+  </div>
+</div> <!--  row -->

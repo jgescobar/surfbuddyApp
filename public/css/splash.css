@@ -1,18 +1,11 @@
-*,
-html,
-body {
-  /*box-sizing: border-box;*/
-
-}
-
-body {
+.splash {
   font-size: 14px;
   padding: 50px;
   margin-top: 100px;
   text-align: right;
 }
 
-#logo {
+.splash #logo {
   font-family:'Righteous', cursive;
   color: black;
   font-size: 100px;
@@ -20,9 +13,9 @@ body {
 
 }
 
-a { color: #00B7FF; }
+.splash a { color: #00B7FF; }
 
-.surfvideo {
+.splash .surfvideo {
     position: fixed;
     padding-top: 55px;
     top: 60%;
@@ -36,7 +29,7 @@ a { color: #00B7FF; }
     text-align: center;
 }
 
-.iconfooter {
+.splash .iconfooter {
   text-align: center;
 }
 
