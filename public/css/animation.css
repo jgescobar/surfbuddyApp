@@ -1,0 +1,22 @@
+/*** example of CSS animation
+.label-success {
+  transition: all 0.6s linear;
+  width: 55px;
+}
+
+.label-success.ng-hide {
+  width: 0;
+}*/
+
+/*** Animate route changes*/
+
+[ui-view].ng-enter {
+  transition: all 1s ease;
+  opacity: 0;
+}
+
+[ui-view].ng-enter-active {
+  opacity: 1;
+}
+
+/*** Animate ng-repeat*/

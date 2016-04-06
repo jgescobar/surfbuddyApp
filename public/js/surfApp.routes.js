@@ -18,14 +18,14 @@
         templateUrl: '/js/surfApp/spots/spots.html'
       })
       .state('spots.detail', {
-        url: '/spots/:spotName',
+        url: '/:spotName',
         templateUrl: '/js/surfApp/spots/spots.detail.html',
         controller: function ($stateParams) {
-          console.log($stateParams);
+          console.log("$stateParams");
         }
       });
 
-    $urlRouterProvider.otherwise('/');
+    // $urlRouterProvider.otherwise('/');
   }
 
 })();
