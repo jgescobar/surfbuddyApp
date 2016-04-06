@@ -1,11 +1,14 @@
-## SurfBuddy 
+## Cali
 
 
-##ERD
 
 ##Technologies Used
 
 Google Maps API
+
+Spitcast 
+
+WUnderground
 
 
 :tada:

@@ -40,8 +40,10 @@ html, body {
 #logo {
   font-family:'Righteous', cursive;
   color: black;
-  text-align: right;
-  padding: 10px;
+  text-align: left;
+  padding: 7px;
+  border: 5px solid rgb(246, 217, 44);
+  margin-top: 7px;
 }
 
 .lilsurfer {
@@ -50,13 +52,14 @@ html, body {
 }
 
 .dropdown-menu {
-  text-align: right;
-  padding: 10px;
+  padding: 5px;
   color: black;
+
 }
 
 #dropdown-btn{
   cursor: pointer;
+  margin: -5px 0px 57px 358px;
 }
 
 .dropdown-choice:hover {
@@ -72,7 +75,7 @@ html, body {
 }
 
 .surfbuddy-logo {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .surf-details {
@@ -251,5 +254,10 @@ iframe {
 
 .iconfooter {
   text-align: center;
+  margin: 350px 0px 0px 0px;
+}
+
+.spots {
+  margin-top: 30px;
 }
 
