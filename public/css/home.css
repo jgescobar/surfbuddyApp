@@ -236,7 +236,7 @@ a.forecast-link {
 .surf-modal-size {
   background-color: white;
   border-radius: 10px;
-  width: 700px;
+  /*width: 700px;*/
 }
 
 #carousel-example-generic {
