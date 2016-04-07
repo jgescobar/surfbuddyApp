@@ -17,7 +17,7 @@
       {id: 3, title: 'Orange County',  caption: 'Huntington Beach', image: 'http://en.blog.hotelnights.com/wp-content/plugins/php-image-cache/image.php?path=/wp-content/uploads/2013/08/surf-in-california.jpg'}
     ];
 
-    $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
+    $scope.map = { center: { latitude: 34.37256542974805, longitude: -119.4779929046033 }, zoom: 15 };
 
     vm.openModal = openModal;
 
@@ -47,8 +47,6 @@
           vm.countSelected = res
         });
       });
-
-
 
   }
 
