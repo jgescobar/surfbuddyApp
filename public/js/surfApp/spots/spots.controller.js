@@ -20,6 +20,7 @@
     $scope.map = { center: { latitude: 34.37256542974805, longitude: -119.4779929046033 }, zoom: 15 };
 
     vm.openModal = openModal;
+    vm.spotChoice = "";
 
     function openModal(size) {
       $uibModal.open({
@@ -38,15 +39,27 @@
       });
     }
 
-    document.getElementById("county-picks").addEventListener("change", function(evt) {
-      var location = evt.target.value
-      $http
-        .get("http://api.spitcast.com/api/county/spots/" + location)
-        .success(function(res) {
-          //res is an array
-          vm.countSelected = res
-        });
-      });
+    // document.getElementById("county-picks").addEventListener("change", function(evt) {
+    //   var location = evt.target.value
+
+      vm.getCountySpots = getCountySpots;
+
+      function getCountySpots() {
+        if (vm.spotChoice !== '') {
+          $http
+            .post("/api/cspots", {county: vm.spotChoice})
+            .success(function(res) {
+              //res is an array
+              $log.info('this is the res', res)
+              vm.countSelected = res
+              $log.info(vm.countSelected);
+            }, function(err) {
+              $log.info(err)
+            });
+        }
+      }
+
+      // });
 
   }
 

@@ -27,13 +27,13 @@
     </div> --> <!-- .dropdown -->
 
   <form id="county-picks">
-    <select class="btn btn-default">
+    <select class="btn btn-default" ng-model="vm.spotChoice" ng-change="vm.getCountySpots()">
       <option value="" selected="selected" disabled>Pick a County<span class="caret"></span></option>
-      <option value="santa-barbara">Santa Barbara</option>
-      <option value="ventura">Ventura</option>
-      <option value="los-angeles">Los Angeles</option>
-      <option value="los-angeles">Orange County</option>
-    </select>
+      <option value='santa-barbara'>Santa Barbara</option>
+      <option value='ventura'>Ventura</option>
+      <option value='los-angeles'>Los Angeles</option>
+      <option value='orange-county'>Orange County</option>
+      </select>
   </form>
 
 <!--      <div class="dropdown menu" "col-md-4" style="margin-right: 150px;">

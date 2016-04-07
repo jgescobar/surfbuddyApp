@@ -3,7 +3,10 @@ var express = require('express'),
 
 // Require controllers.
 var pagesController = require('../controllers/pages');
+var spotsController = require('../controllers/spots');
 // var usersController = require('../controllers/users');
+
+router.post('/api/cspots', spotsController.getCSpots)
 
 // root path:
 // router.get('/', pagesController.welcome);
