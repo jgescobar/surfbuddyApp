@@ -5,9 +5,9 @@
     .module('surfApp')
     .controller('SpotsController', SpotsController);
 
-  SpotsController.$inject = ['$scope', '$uibModal'];
+  SpotsController.$inject = ['$scope', '$uibModal', '$http', '$log'];
 
-  function SpotsController($scope, $uibModal) {
+  function SpotsController($scope, $uibModal, $http, $log) {
     var vm = this;
 
     vm.slides = [
@@ -17,6 +17,8 @@
       {id: 3, title: 'Orange County',  caption: 'Huntington Beach', image: 'http://en.blog.hotelnights.com/wp-content/plugins/php-image-cache/image.php?path=/wp-content/uploads/2013/08/surf-in-california.jpg'}
     ];
 
+    $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
+
     vm.openModal = openModal;
 
     function openModal(size) {
@@ -24,7 +26,7 @@
         animation:   true,
         templateUrl: 'modal-content',
         controller:  'SpotsModalController',
-        size:        'md',
+        size:        'lg',
         resolve: {
           location: function () {
             return {
@@ -35,6 +37,19 @@
         }
       });
     }
+
+    document.getElementById("county-picks").addEventListener("change", function(evt) {
+      var location = evt.target.value
+      $http
+        .get("http://api.spitcast.com/api/county/spots/" + location)
+        .success(function(res) {
+          //res is an array
+          vm.countSelected = res
+        });
+      });
+
+
+
   }
 
 })();

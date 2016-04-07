@@ -26,12 +26,15 @@
       </ul>
     </div> --> <!-- .dropdown -->
 
+  <form id="county-picks">
     <select class="btn btn-default">
       <option value="" selected="selected" disabled>Pick a County<span class="caret"></span></option>
-      <option value="sant-barbara">Santa Barbara</option>
+      <option value="santa-barbara">Santa Barbara</option>
       <option value="ventura">Ventura</option>
       <option value="los-angeles">Los Angeles</option>
+      <option value="los-angeles">Orange County</option>
     </select>
+  </form>
 
 <!--      <div class="dropdown menu" "col-md-4" style="margin-right: 150px;">
       <button id="dropdown-btn" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -43,10 +46,13 @@
       </ul>
     </div>  --><!-- .dropdown -->
 
-<!--     <select class="btn btn-default">
+  <form id="county-picks">
+    <select id="spot-pick" class="btn btn-default">
       <option value="" selected="selected" disabled>Pick a Spot<span class="caret"></span></option>
-      <option ng-repeat="spot in vm.spots" value="{{ spot.id }}">{{ spot.name }}</option>
-    </select> -->
+      <option ng-repeat="spot in vm.countySelected" value="{{ spot.id }}">{{ spot.name }}</option>
+    </select>
+  </form>
+
 
   </header>
 
