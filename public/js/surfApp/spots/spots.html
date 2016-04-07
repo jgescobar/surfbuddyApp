@@ -14,18 +14,6 @@
       <p class="tagline"><em>Let's check out some swells bra</em></p>
     </div> <!-- .surfbuddy-logo -->
 
-    <!-- <div class="dropdown menu" "col-md-4" style="margin-right: 150px;">
-      <button id="dropdown-btn" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-        Pick a County
-        <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdown-btn">
-        <li class="dropdown-choice">Santa Barbara</li>
-        <li class="dropdown-choice">Ventura</li>
-        <li class="dropdown-choice">Los Angeles</li>
-      </ul>
-    </div> --> <!-- .dropdown -->
-
   <form id="county-picks">
     <select class="btn btn-default" ng-model="vm.spotChoice" ng-change="vm.getCountySpots()">
       <option value="" selected="selected" disabled>Pick a County<span class="caret"></span></option>
@@ -35,8 +23,7 @@
       <option value='orange-county'>Orange County</option>
       </select>
   </form>
-
-<!--      <div class="dropdown menu" "col-md-4" style="margin-right: 150px;">
+<!-- <div class="dropdown menu" "col-md-4" style="margin-right: 150px;">
       <button id="dropdown-btn" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
         Pick a surf spot
         <span class="caret"></span>
@@ -49,10 +36,9 @@
   <form id="county-picks">
     <select id="spot-pick" class="btn btn-default">
       <option value="" selected="selected" disabled>Pick a Spot<span class="caret"></span></option>
-      <option ng-repeat="spot in vm.countySelected" value="{{ spot.id }}">{{ spot.name }}</option>
+      <option ng-repeat="spot in vm.spots" value="{{ spot.id }}">{{ spot.spot_name }}</option>
     </select>
   </form>
-
 
   </header>
 
@@ -72,6 +58,13 @@
       </div>
     </div> <!-- col-md-12 -->
   </div> <!-- row -->
+
+ <!-- surfline video -->
+<!-- <div style="margin: 10px 20px;">
+ <iframe width="640" height="360" src="http://e.cdn-surfline.com/syndication/embed/v1/player.html?id=4203"
+  frameborder="0" scrolling="no" allowfullscreen></iframe>
+</div> -->
+
 
   <div ui-view></div>
 

@@ -38,29 +38,44 @@
         }
       });
     }
-
-    // document.getElementById("county-picks").addEventListener("change", function(evt) {
-    //   var location = evt.target.value
-
       vm.getCountySpots = getCountySpots;
-
+      vm.getCntySptsDeats = getCntySptsDeats;
+      var spots = [];
       function getCountySpots() {
         if (vm.spotChoice !== '') {
           $http
             .post("/api/cspots", {county: vm.spotChoice})
             .success(function(res) {
               //res is an array
-              $log.info('this is the res', res)
-              vm.countSelected = res
-              $log.info(vm.countSelected);
+              $log.info('this is the res', res);
+              vm.countSelected = res;
+              res.forEach(function(spot){
+                spots.push(spot);
+                vm.spots = spots;
+                $log.info(vm.spots);
+              });
+              // $log.info(vm.countSelected);
             }, function(err) {
               $log.info(err)
             });
         }
       }
+      function getCntySptsDeats() {
+        if (vm.spotChoice !== '') {
+          $http
+            .post("/api/cspotsdeats", {spot: vm.spotDeats})
+            .success(function(res) {
+              //res is an array
+              $log.info('this is deats res', res);
+              vm.spotSelected = res;
+              $log.info(vm.spotSelected);
+            }, function(err) {
+              $log.info(err);
+          })
+        }
+      }
 
-      // });
 
-  }
-
+     //Don't touch these:
+     }
 })();
