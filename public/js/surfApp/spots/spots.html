@@ -9,7 +9,7 @@
           <img alt="" src="/images/curl-small.svg">
           <img alt="" src="/images/curl-medium.svg">
         </a>
-        <h1 id="logo">Cali*Bunga</h1>
+        <h1 id="logo"><a ui-sref="spots">Cali*Bunga</a></h1>
       </div> <!-- .lilsurfer -->
       <p class="tagline"><em>Let's check out some swells bra</em></p>
     </div> <!-- .surfbuddy-logo -->
@@ -34,9 +34,9 @@
     </div>  --><!-- .dropdown -->
 
   <form id="county-picks">
-    <select id="spot-pick" class="btn btn-default">
+    <select id="spot-pick" class="btn btn-default" ng-model="vm.spotDeats" ng-change="vm.getCntySptsDeats()">
       <option value="" selected="selected" disabled>Pick a Spot<span class="caret"></span></option>
-      <option ng-repeat="spot in vm.spots" value="{{ spot.id }}">{{ spot.spot_name }}</option>
+      <option ng-repeat="spot in vm.spots" value="{{ spot.spot_id }}" ui-sref="spots.detail">{{ spot.spot_name }}</option>
     </select>
   </form>
 
@@ -66,7 +66,7 @@
 </div> -->
 
 
-  <div ui-view></div>
+  <div ui-view ></div>
 
   <div class="iconfooter">
     <footer>

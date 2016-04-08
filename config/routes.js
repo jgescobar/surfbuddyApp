@@ -6,7 +6,8 @@ var pagesController = require('../controllers/pages');
 var spotsController = require('../controllers/spots');
 // var usersController = require('../controllers/users');
 
-router.post('/api/cspots', spotsController.getCSpots)
+router.post('/api/cspots', spotsController.getCSpots);
+router.post('/api/cspotsdeats', spotsController.getCSpotsDeats);
 
 // root path:
 // router.get('/', pagesController.welcome);

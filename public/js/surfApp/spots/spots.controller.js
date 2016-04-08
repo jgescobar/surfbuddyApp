@@ -5,9 +5,9 @@
     .module('surfApp')
     .controller('SpotsController', SpotsController);
 
-  SpotsController.$inject = ['$scope', '$uibModal', '$http', '$log'];
+  SpotsController.$inject = ['$scope', '$uibModal', '$http', '$log', '$state'];
 
-  function SpotsController($scope, $uibModal, $http, $log) {
+  function SpotsController($scope, $uibModal, $http, $log, $state) {
     var vm = this;
 
     vm.slides = [
@@ -17,10 +17,13 @@
       {id: 3, title: 'Orange County',  caption: 'Huntington Beach', image: 'http://en.blog.hotelnights.com/wp-content/plugins/php-image-cache/image.php?path=/wp-content/uploads/2013/08/surf-in-california.jpg'}
     ];
 
-    $scope.map = { center: { latitude: 34.37256542974805, longitude: -119.4779929046033 }, zoom: 15 };
+
 
     vm.openModal = openModal;
     vm.spotChoice = "";
+    vm.getCountySpots = getCountySpots;
+    vm.getCntySptsDeats = getCntySptsDeats;
+    vm.spotDeats = '';
 
     function openModal(size) {
       $uibModal.open({
@@ -38,21 +41,18 @@
         }
       });
     }
-      vm.getCountySpots = getCountySpots;
-      vm.getCntySptsDeats = getCntySptsDeats;
-      var spots = [];
       function getCountySpots() {
+        var spots = [];
         if (vm.spotChoice !== '') {
           $http
             .post("/api/cspots", {county: vm.spotChoice})
             .success(function(res) {
               //res is an array
-              $log.info('this is the res', res);
               vm.countSelected = res;
               res.forEach(function(spot){
                 spots.push(spot);
                 vm.spots = spots;
-                $log.info(vm.spots);
+                $log.info(spots);
               });
               // $log.info(vm.countSelected);
             }, function(err) {
@@ -61,14 +61,15 @@
         }
       }
       function getCntySptsDeats() {
-        if (vm.spotChoice !== '') {
+        if (vm.spotDeats !== '') {
           $http
-            .post("/api/cspotsdeats", {spot: vm.spotDeats})
+            .post("/api/cspotsdeats/", {spot: vm.spotDeats})
             .success(function(res) {
               //res is an array
               $log.info('this is deats res', res);
-              vm.spotSelected = res;
-              $log.info(vm.spotSelected);
+              vm.spotDetails = res;
+              $state.go('spots.detail');
+              $scope.map = { center: { latitude: vm.spotDetails[0].latitude, longitude: vm.spotDetails[0].longitude }, zoom: 15 };
             }, function(err) {
               $log.info(err);
           })

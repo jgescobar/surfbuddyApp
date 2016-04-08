@@ -1,10 +1,10 @@
 var url = "http://api.spitcast.com/api/county/spots/";
-// var url = "http://api.spitcast.com/api/spot/forecast/";
+var forecastUrl = "http://api.spitcast.com/api/spot/forecast/";
 var requestM = require('request');
 
 module.exports = {
-  getCSpots: getCSpots
-  // getCSpotsDeats: getCSpotsDeats
+  getCSpots: getCSpots,
+  getCSpotsDeats: getCSpotsDeats
 }
 
 function getCSpots(req, res) {
@@ -19,7 +19,7 @@ function getCSpots(req, res) {
 function getCSpotsDeats(req, res) {
   console.log(req.body);
   var info;
-  requestM(url + req.body.spot_id, function(err, resp, body) {
+  requestM(forecastUrl + req.body.spot, function(err, resp, body) {
     info = JSON.parse(body)
     res.json(info);
   })
