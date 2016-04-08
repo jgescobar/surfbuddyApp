@@ -87,14 +87,16 @@ html, body {
   color: white;
   padding: 0px 0px 6px 0px;
   border-radius: 10px;
-  margin: 0 auto;
+  margin: 25px auto;
+  /*width: 100px;*/
+  /*margin: 25px 40px 0px 40px;*/
   border: 2px solid black;
   list-style: none;
   float: left;
 }
 
 #lilreports {
-  background-color: #879254;
+  background-color: cadetblue;
   margin: 1px 1px 1px 1px;
 }
 
@@ -174,13 +176,14 @@ html, body {
 .weather-container{
   background-color: #0099cc;;
   color: white;
-  padding: 5px;
+  padding: 9px 20px 3px 20px;
   border-radius: 10px;
-  height: 450px;
+  height: 355px;
   margin: 0 auto;
   text-align: center;
   font-size: 16px;
   border: 2px solid black;
+  margin: 25px 40px 0px 40px;
 }
 
 h3.current {
