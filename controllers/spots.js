@@ -17,7 +17,7 @@ function getCSpots(req, res) {
 }
 
 function getCSpotsDeats(req, res) {
-  console.log(req.body);
+  console.log("test", req.body);
   var info;
   requestM(forecastUrl + req.body.spot, function(err, resp, body) {
     info = JSON.parse(body)

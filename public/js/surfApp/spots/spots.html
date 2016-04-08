@@ -9,9 +9,9 @@
           <img alt="" src="/images/curl-small.svg">
           <img alt="" src="/images/curl-medium.svg">
         </a>
-        <h1 id="logo"><a ui-sref="spots">Cali*Bunga</a></h1>
+        <h1 id="logo">Cali*Bunga</h1>
       </div> <!-- .lilsurfer -->
-      <p class="tagline"><em>Let's check out some swells bra</em></p>
+      <p class="tagline"><em>Let's check out some swells brah</em></p>
     </div> <!-- .surfbuddy-logo -->
 
   <form id="county-picks">
@@ -23,15 +23,6 @@
       <option value='orange-county'>Orange County</option>
       </select>
   </form>
-<!-- <div class="dropdown menu" "col-md-4" style="margin-right: 150px;">
-      <button id="dropdown-btn" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-        Pick a surf spot
-        <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdown-btn">
-        <li class="dropdown-choice">{{'vm.county.name'}}</li>
-      </ul>
-    </div>  --><!-- .dropdown -->
 
   <form id="county-picks">
     <select id="spot-pick" class="btn btn-default" ng-model="vm.spotDeats" ng-change="vm.getCntySptsDeats()">
@@ -48,7 +39,7 @@
       <div class="carousel" style="height: 305px">
         <uib-carousel active="active" interval="4000" no-pause="true" no-wrap="false">
           <uib-slide ng-repeat="slide in vm.slides track by slide.id" index="slide.id">
-            <img ng-src="{{slide.image}}" style="margin:auto;">
+            <img ng-src="{{slide.image}}" style="max-height:400px; margin:0 auto;">
             <div class="carousel-caption">
               <h4>{{slide.title}}</h4>
               <p>{{slide.caption}}</p>
@@ -71,7 +62,7 @@
   <div class="iconfooter">
     <footer>
       <hr>
-      <span>Made with Internship Labor on a very cold desk.</span>
+      <span>Made with internship Labor on a very cold desk.</span>
       <br>
       <span ng-click="vm.openModal();"> © 2016, Cali*Bunga </span> &nbsp; &nbsp;
     </footer>

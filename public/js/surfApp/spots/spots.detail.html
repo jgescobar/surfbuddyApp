@@ -25,24 +25,20 @@
     </div> <!-- surf-details -->
     <br>
 
-    <div class="surf-details2">
+    <div class="surf-details2" class="col-md-1">
       <div class="overlay">
         <h3 style="font-family: 'Fjalla One', sans-serif" class="comment">Surf Report</h3>
-        <!-- <p><strong><span style="color: #96a25d">Swell: </span></strong>{{vm.spotDetails[0].shape_detail.swell}}</p>
-        <p><strong><span style="color: #80bfff">Wind: </span></strong>{{vm.spotDetails[0].shape_detail.wind}}</p>
-        <p><strong><span style="color: #cc0000">Tide: </span></strong>{{vm.spotDetails[0].shape_detail.tide}}</p>
-        <p><strong><span style="color: #cc0000">Size: </span></strong>{{vm.spotDetails[0].size}}</p> -->
         <ul>
-          <li ng-repeat="data in vm.spotDetails">
-            <p><strong><span style="color: #861360">Time: <span style="color: #000000"><strong>{{data.hour}}</span></p>
-            <p><strong><span style="color: #80bfff">Tide: <span style="color: #000000"><strong>{{data.shape_detail.tide}}</span></p>
-            <p><strong><span style="color: #d6d329">Wind: <span style="color: #000000"><strong>{{data.shape_detail.wind}}</span></p>
-            <p><strong><span style="color: #9999ff">Swell: <span style="color: #000000"><strong>{{data.shape_detail.swell}}</span></p>
-            <p><strong><span style="color: #006600">Size: <span style="color: #000000"><strong>{{data.size}}</span></p>
+          <li id="lilreports" class="surf-details2" ng-repeat="data in vm.spotDetails">
+            <p><strong><span style="color: #861360">Time: </span><span style="color: #000000"></strong>{{data.hour}}</span></p>
+            <p><strong><span style="color: #666633">Tide: </span><span style="color: #000000"></strong>{{data.shape_detail.tide}}</span></p>
+            <p><strong><span style="color: #d6d329">Wind: </span><span style="color: #000000"></strong>{{data.shape_detail.wind}}</span></p>
+            <p><strong><span style="color: #cc0052">Swell: </span><span style="color: #000000"></strong>{{data.shape_detail.swell}}</span></p>
+            <p><strong><span style="color: #006600">Size: </span><span style="color: #000000"></strong>{{data.size}}</span></p>
           </li>
         </ul>
+        </div>
       </div>
-    </div>
     <br>
 
   </div> <!-- .col-md-4.shift -->
@@ -51,18 +47,18 @@
   <div class="col-md-6">
     <div class="weather-container">
       <div class="overlay">
-        <button id="switch-to-f">&#176; F</button>
-        <button id="switch-to-c">&#176; C</button>
+        <button id="switch-to-f">{{vm.weather.temp_f}}&#176; F</button>
+        <button id="switch-to-c">{{vm.weather.temp_c}}&#176; C</button>
         <div id="date"></div>
         <div id="weather-condition"></div>
         <div id="icon-background">
-          <div id="weather-icon"></div>
+          <div id="weather-icon"><img ng-src="{{vm.weather.icon_url}}"></div>
         </div>
         <div>
-          <p style="font-size: 45px" class="actual-temp"></p>
-          <p style="font-size: 16px" class="feels-like"></p>
-          <p style="font-size: 16px" id="high"></p>
-          <p style="font-size: 16px" class="wind"></p>
+          <p style="font-size: 45px" class="actual-temp">{{vm.weather.temperature_string}}</p>
+          <p style="font-size: 16px" class="feels-like">{{vm.weather.feelslike_string}}</p>
+          <p style="font-size: 16px" id="windspeed">{{vm.weather.wind_mph}} mph</p>
+          <p style="font-size: 16px" class="wind">{{vm.weather.wind_string}}</p>
           <p id="10forecast"></p>
         </div>
       </div> <!--  overlay -->

@@ -25,6 +25,7 @@
     vm.getCntySptsDeats = getCntySptsDeats;
     vm.spotDeats = '';
 
+
     function openModal(size) {
       $uibModal.open({
         animation:   true,
@@ -62,6 +63,7 @@
       }
       function getCntySptsDeats() {
         if (vm.spotDeats !== '') {
+          console.log("vmspotsDeats", vm.spotDeats)
           $http
             .post("/api/cspotsdeats/", {spot: vm.spotDeats})
             .success(function(res) {
@@ -73,9 +75,21 @@
             }, function(err) {
               $log.info(err);
           })
+            $http({
+              url: 'http://api.wunderground.com/api/f0261b181a638bd2/conditions/q/CA/' + vm.spotChoice + '.json',
+              method: 'GET',
+              dataType: "application/json"
+            }).then(
+             function(res) {
+                console.log(res)
+                vm.weather = res.data.current_observation
+              }, function(err) {
+                console.log(err)
+              }
+            )
+
         }
       }
-
 
      //Don't touch these:
      }
