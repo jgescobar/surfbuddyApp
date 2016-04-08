@@ -17,5 +17,19 @@
     "morgan": "~1.6.1",
     "request": "^2.70.0",
     "serve-favicon": "~2.3.0"
-  }
+  },
+  "description": "",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jgescobar/surfbuddyApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jgescobar/surfbuddyApp/issues"
+  },
+  "homepage": "https://github.com/jgescobar/surfbuddyApp#readme"
 }
