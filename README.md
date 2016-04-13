@@ -1,7 +1,7 @@
 ## Cali * Bunga
 
 
-![] (http://imgur.com/DzBrip2)
+![](http://imgur.com/DzBrip2)
 
 My fourth project consisted of using the MEAN stack development technologies. With a non relational database of Mongodb, I was able to come up with an application that incorporated the Spitcast, Google, and Weather Underground API to allow specific data to be used within my own application. 
 
