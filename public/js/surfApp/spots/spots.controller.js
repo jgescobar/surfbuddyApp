@@ -20,7 +20,7 @@
 
 
     vm.openModal = openModal;
-    vm.spotChoice = "";
+    vm.spotChoice = '';
     vm.getCountySpots = getCountySpots;
     vm.getCntySptsDeats = getCntySptsDeats;
     vm.spotDeats = '';
@@ -48,6 +48,7 @@
           $http
             .post("/api/cspots", {county: vm.spotChoice})
             .success(function(res) {
+              console.log("res", res)
               //res is an array
               vm.countSelected = res;
               res.forEach(function(spot){
@@ -57,11 +58,12 @@
               });
               // $log.info(vm.countSelected);
             }, function(err) {
-              $log.info(err)
+              $log.info("this is where is stops->", err)
             });
         }
       }
        function getCntySptsDeats() {
+        var editedSpotChoice = vm.spotChoice.replace(/-/gmi, "_");
         if (vm.spotDeats !== '') {
           console.log("vmspotsDeats", vm.spotDeats)
           $http
@@ -76,7 +78,7 @@
               $log.info(err);
           })
             $http({
-              url: 'http://api.wunderground.com/api/f0261b181a638bd2/conditions/q/CA/' + vm.spotChoice + '.json',
+              url: 'http://api.wunderground.com/api/f0261b181a638bd2/conditions/q/CA/' + editedSpotChoice + '.json',
               method: 'GET',
               dataType: "application/json"
             }).then(
@@ -94,3 +96,4 @@
      //Don't touch these:
      }
 })();
+

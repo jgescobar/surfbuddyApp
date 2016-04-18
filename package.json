@@ -19,7 +19,6 @@
     "serve-favicon": "~2.3.0"
   },
   "description": "",
-  "main": "server.js",
   "devDependencies": {},
   "repository": {
     "type": "git",
